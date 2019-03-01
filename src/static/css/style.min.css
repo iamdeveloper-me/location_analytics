@@ -1,0 +1,766 @@
+.no-border,
+.no-box-border {
+	border: none!important
+}
+
+.no-box-border,
+a,
+button,
+input,
+select,
+textarea {
+	box-shadow: none!important
+}
+
+:focus,
+a,
+button,
+img:active,
+img:focus {
+	outline: 0!important
+}
+
+body {
+	font-family: "Source Sans Pro", sans-serif!important;
+	font-weight: 400;
+	color: #24353A!important;
+	background-color: #FAFAFA!important
+}
+
+.no-padding {
+	padding: 0!important
+}
+
+.no-left-padding {
+	padding-left: 0!important
+}
+
+.no-right-padding {
+	padding-right: 0!important
+}
+
+.no-top-padding {
+	padding-top: 0!important
+}
+
+.no-bottom-padding {
+	padding-bottom: 0!important
+}
+
+.no-margin {
+	margin: 0!important
+}
+
+.no-left-margin {
+	margin-left: 0!important
+}
+
+.no-right-margin {
+	margin-right: 0!important
+}
+
+.no-top-margin {
+	margin-top: 0!important
+}
+
+.no-bottom-margin {
+	margin-bottom: 0!important
+}
+
+.visible-xxs {
+	display: none
+}
+
+a,
+a:focus,
+a:hover {
+	color: #777bf0!important
+}
+
+a,
+button {
+	transition: all .6s ease;
+	cursor: pointer;
+	text-decoration: none!important
+}
+
+input,
+select,
+textarea {
+	border-radius: 3px;
+	outline: 0!important
+}
+
+.full-width {
+	width: 100%!important
+}
+
+.max-full-width {
+	max-width: 100%!important
+}
+
+header {
+	background-color: #fff!important;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+	padding: 10px 20px;
+	z-index: 1;
+	position: relative
+}
+
+header .logo-col {
+	padding-top: 3px
+}
+
+header .logo-col a {
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 30px;
+	color: #24353A!important
+}
+
+header .logo-col a img {
+	max-width: 100%
+}
+
+header .heading-col {
+	padding: 16px 15px
+}
+
+header .heading-col label {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 23px;
+	letter-spacing: .5px;
+	color: #24353A!important;
+	text-transform: uppercase;
+	margin: 0
+}
+
+header .profile-col {
+	text-align: right;
+	padding: 8px 15px
+}
+
+header .profile-col .profile-div {
+	display: inline-block
+}
+
+header .profile-col .profile-div p {
+	font-size: 20px;
+	line-height: 24px;
+	color: #fff!important;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+	padding-top: 7px;
+	background-color: #24353A!important;
+	display: inline-block;
+	margin: 0 15px 0 0;
+	border-radius: 100%
+}
+
+header .profile-col .profile-div button {
+	border: none!important;
+	float: none!important;
+	padding: 0!important;
+	background: 0 0!important;
+	font-size: 18px;
+	line-height: 23px;
+	color: #81878F!important;
+	text-transform: uppercase
+}
+
+header .profile-col .profile-div i {
+	color: rgba(0, 0, 0, .54);
+	margin-left: 15px;
+	font-size: 12px;
+	line-height: 35px
+}
+
+.login-section {
+	background-color: #FAFAFA!important;
+	height: 100vh
+}
+
+.login-section .logo-col {
+	text-align: center;
+	padding: 12rem 15px 5rem
+}
+
+.login-section .logo-col.login-logo {
+	padding: 6rem 15px 5rem
+}
+
+.login-section .login-col .login-div {
+	background-color: #fff!important;
+	padding: 25px 45px;
+	max-width: 430px;
+	margin: 0 auto;
+	border-radius: 3px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, .04)
+}
+
+.login-section .login-col .login-div h1 {
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 40px;
+	letter-spacing: .5px;
+	margin: 0 0 30px;
+	color: #24353A!important;
+	text-align: center;
+	text-transform: uppercase
+}
+
+.login-section .login-col .login-div form label {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 18px;
+	color: #81878F!important;
+	text-transform: uppercase;
+	display: block;
+	margin: 0 0 10px
+}
+
+.login-section .login-col .login-div form input {
+	border: 1px solid #81878F!important;
+	border-radius: 3px;
+	padding: 6px 12px;
+	margin-bottom: 30px;
+	font-size: 20px;
+	line-height: 25px;
+	color: #24353A!important;
+	height: 50px
+}
+
+.login-section .login-col .login-div form input.country-code-input {
+	width: 50px;
+	margin-right: 15px
+}
+
+.login-section .login-col .login-div form input.code-input {
+	width: 21%;
+	text-align: center;
+	margin-right: 15px;
+	margin-bottom: 15px
+}
+
+.login-section .login-col .login-div form input.number-input {
+	width: 80%
+}
+
+.login-section .login-col .login-div form .send-code-btn {
+	width: 100%;
+	background-color: #777bf0!important;
+	color: #fff!important;
+	box-shadow: 5px 6px 10px rgba(0, 0, 0, .09)!important;
+	padding: 15px;
+	border-radius: 3px;
+	font-size: 18px;
+	line-height: 23px;
+	text-transform: uppercase;
+	border: 1px solid #777bf0!important;
+	margin-bottom: 25px
+}
+
+.login-section .login-col .login-div form .send-code-btn:hover {
+	background-color: transparent!important;
+	color: #777bf0!important
+}
+
+.apps-section .apps-link-col .apps-link-div,
+.compare-page .compare-section .tabs-col .tabs-div {
+	background-color: #fff!important;
+	box-shadow: 0 6px 18px rgba(45, 141, 255, .04)!important
+}
+
+.login-section .login-col .login-div form a {
+	font-weight: 600;
+	color: #81878F!important;
+	font-size: 16px;
+	line-height: 20px;
+	display: block;
+	text-align: center;
+	text-transform: uppercase
+}
+
+.login-section .login-col .login-div form a:hover {
+	color: #777bf0!important
+}
+
+.login-section .login-col .login-div form p {
+	font-size: 16px;
+	line-height: 20px;
+	color: #81878F!important;
+	margin-bottom: 25px;
+	text-align: center
+}
+
+.login-section .login-col .login-div form p a {
+	color: #777bf0!important;
+	display: inline-block
+}
+
+.apps-section .heading-col {
+	padding: 45px 15px 35px
+}
+
+.apps-section .heading-col h1 {
+	margin: 0;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 36px;
+	letter-spacing: .5px;
+	color: #24353A!important;
+	text-transform: uppercase
+}
+
+.apps-section .apps-link-col {
+	padding: 0
+}
+
+.apps-section .apps-link-col .apps-link-div {
+	border-radius: 3px;
+	text-align: center;
+	padding: 15px;
+	width: 168px;
+	height: 168px;
+	float: left;
+	margin: 0 15px 30px;
+	align-items: center;
+	justify-content: center;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	border: 1px solid transparent!important;
+	transition: border .6s ease
+}
+
+.apps-section .apps-link-col .apps-link-div .image-div {
+	margin-bottom: 20px
+}
+
+.apps-section .apps-link-col .apps-link-div .text-div h2 {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 23px;
+	letter-spacing: .1px;
+	color: #24353A!important;
+	margin: 0;
+	text-transform: uppercase
+}
+
+.apps-section .apps-link-col .apps-link-div:hover {
+	border: 1px solid #777bf0!important
+}
+
+.compare-page .visible-xxs {
+	display: none
+}
+
+.compare-page .compare-section {
+	padding: 0rem 0;
+}
+
+.compare-page .compare-section .tabs-col {
+	padding: 0 35px;
+	margin-bottom: 25px
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .preference-col {
+	padding: 21px 45px
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .preference-col .dropdown button {
+	border: none!important;
+	background-color: transparent!important;
+	padding: 0!important;
+	color: #24353A!important;
+	text-transform: uppercase;
+	font-size: 18px;
+	line-height: 23px
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .preference-col .dropdown button img {
+	margin-right: 10px
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .preference-col .dropdown button .caret {
+	margin-left: 15px
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .preference-col .dropdown ul {
+	padding: 0!important;
+	margin-top: 10px;
+	min-width: 165px
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .preference-col .dropdown ul li {
+	padding: 5px 20px;
+	color: #777bf0!important
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .preference-col .dropdown ul li a {
+	padding: 0;
+	color: #777bf0!important;
+	white-space: normal
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .preference-col .dropdown ul li a:focus,
+.compare-page .compare-section .tabs-col .tabs-div .preference-col .dropdown ul li a:hover {
+	background-color: transparent!important
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .cards-map-view-col ul {
+	border: none!important
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .cards-map-view-col ul li {
+	margin: 0!important
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .cards-map-view-col ul li a {
+	margin: 0;
+	border-radius: 0!important;
+	border: none!important;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	letter-spacing: .5px;
+	width: 185px;
+	text-align: center;
+	padding: 22px 0;
+	background-color: #F5FAFF!important;
+	color: #777bf0!important;
+	position: relative
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .cards-map-view-col ul li.active a {
+	background-color: #777bf0!important;
+	color: #fff!important;
+	border: none!important
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .cards-map-view-col ul li.active a:after,
+.compare-page .compare-section .tabs-col .tabs-div .cards-map-view-col ul li.active a:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .cards-map-view-col ul li.active a:after {
+	border-color: rgba(45, 141, 255, 0);
+	border-top-color: #777bf0;
+	border-width: 4px;
+	margin-left: -4px
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .cards-map-view-col ul li.active a:before {
+	border-color: rgba(45, 141, 255, 0);
+	border-top-color: #777bf0;
+	border-width: 10px;
+	margin-left: -10px
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .download-col {
+	text-align: right;
+	padding: 10px 15px
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .download-col .dropdown button {
+	padding: 10px 12px;
+    border: 1px solid #777BF0 !important;
+    border-radius: 3px;
+    color: #777BF0 !important;
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .download-col .dropdown button img {
+	margin-right: 10px
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .download-col .dropdown button .caret {
+	margin-left: 20px
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .download-col .dropdown ul {
+	padding: 0!important;
+	margin-top: 10px;
+	min-width: 223px;
+	left: auto;
+	right: 0
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .download-col .dropdown ul li {
+	padding: 5px 20px;
+	color: #777bf0!important
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .download-col .dropdown ul li a {
+	padding: 0;
+	color: #777bf0!important;
+	white-space: normal
+}
+
+.compare-page .compare-section .tabs-col .tabs-div .download-col .dropdown ul li a:focus,
+.compare-page .compare-section .tabs-col .tabs-div .download-col .dropdown ul li a:hover {
+	background-color: transparent!important
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div {
+	background-color: #fff!important;
+	border-radius: 3px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .06)
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .heading-div {
+	padding: 26px 15px;
+	border-bottom: 1px solid #EFEFEF
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .heading-div h2 {
+	margin: 0;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 36px;
+	color: #24353A!important;
+	text-transform: uppercase;
+	text-align: center
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group {
+	margin: 0
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel {
+	border-radius: 0!important;
+	box-shadow: none!important;
+	border: none!important;
+	margin: 0!important
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel .panel-heading {
+	border: none!important;
+	padding: 0!important
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel .panel-heading h4 {
+	font-weight: 400
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel .panel-heading h4 a {
+	display: block;
+	padding: 15px 10px;
+	background-color: #F5FAFF!important;
+	color: #81878F!important;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 23px;
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel .panel-heading h4 a i {
+	width: 24px;
+	height: 24px;
+	background-color: #777BF0!important;
+	color: #fff!important;
+	text-align: center;
+	border-radius: 100%;
+	padding-top: 2px;
+	margin-right: 5px;
+	transition: transform .6s ease
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel .panel-heading h4 a.collapsed {
+	background-color: #fff!important
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel .panel-heading h4 a.collapsed i {
+	transform: rotate(180deg)
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel .panel-body {
+	background-color: #F5FAFF!important;
+	border: none!important
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel .panel-body ul {
+	list-style-type: none!important;
+	padding-left: 65px;
+	margin-bottom: 80px
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel .panel-body ul li {
+	margin-bottom: 10px;
+	color: #81878F!important;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 23px
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel .panel-body ul li a {
+	color: #81878F!important;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 23px
+}
+
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel .panel-body ul li.active a,
+.compare-page .compare-section .content-col .topics-col .topics-div .panel-group .panel .panel-body ul li:hover a {
+	color: #24353A!important;
+	font-weight: 600
+}
+
+.compare-page .compare-section .content-col .tab-content {
+	padding: 0
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane {
+	padding: 0 5px 0 0
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col {
+	padding-left: 0;
+	margin-bottom: 15px
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .address-div .dropdown button {
+	padding: 10px 35px 10px 20px;
+	border: 1px solid #777BF0!important;
+	box-shadow: 0 6px 18px rgba(45, 141, 255, .04)!important;
+	border-radius: 3px;
+	background-color: #777BF0!important;
+	color: #fff!important;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: normal;
+	width: 100%;
+	text-align: left;
+	position: relative
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .address-div .dropdown button .caret {
+	position: absolute;
+	top: 45%;
+	right: 20px;
+	border-top: 6px dashed;
+	border-right: 6px solid transparent;
+	border-left: 6px solid transparent
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .address-div .dropdown ul {
+	padding: 0!important;
+	margin-top: 10px;
+	min-width: 223px;
+	left: 0;
+	right: 0
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .address-div .dropdown ul li {
+	padding: 5px 20px;
+	color: #6AAEFF!important;
+	font-size: 13px
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .address-div .dropdown ul li a {
+	padding: 0;
+	color: #6AAEFF!important;
+	white-space: normal
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .address-div .dropdown ul li a:focus,
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .address-div .dropdown ul li a:hover {
+	background-color: transparent!important
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .content-div {
+	background-color: #fff!important;
+	box-shadow: 0 6px 18px rgba(45, 141, 255, .04)!important;
+	padding: 0 0 10px;
+	border-radius: 3px
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .content-div .inner-div {
+	text-align: center;
+	padding: 10px
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .content-div .inner-div p {
+	font-size: 16px;
+	line-height: 20px;
+	color: #81878F!important;
+	margin: 0 0 5px
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .content-div .inner-div h3 {
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 36px;
+	color: #24353A!important;
+	margin: 0
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .content-div .inner-div.rating-div {
+	border-top: 1px solid #6AAEFF!important;
+	border-bottom: 1px solid #6AAEFF!important
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .content-div .inner-div.map-div {
+	border-bottom: 1px solid #6AAEFF!important;
+	margin-bottom: 28px
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .content-div .inner-div.map-div h3 {
+	font-size: 22px;
+	line-height: 28px;
+	margin-bottom: 3px
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .content-div .inner-div.map-div .map-container {
+	width: 100%;
+	height: 250px
+}
+
+.compare-page .compare-section .content-col .tab-content .tab-pane .content-card-col .content-div .inner-div.map-div:last-child {
+	border-bottom: none!important
+}
+
+footer {
+	margin-top: 8rem;
+	padding: 75px 0 51px;
+	background-color: #24353A!important
+}
+
+footer .links-col h2 {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 25px;
+	color: #fff!important;
+	margin: 0 0 17px;
+	text-transform: uppercase
+}
+
+footer .links-col a,
+footer .links-col p {
+	display: block;
+	font-size: 16px;
+	line-height: 20px;
+	color: #fff!important;
+	margin: 0 0 20px
+}
+
+footer .copy-col h2 {
+	margin: 0 0 50px
+}
+
+footer .copy-col p a {
+	display: inline-block;
+	margin: 0
+}

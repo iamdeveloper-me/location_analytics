@@ -1,0 +1,367 @@
+@import 'variables';
+
+@media only screen and (max-width: 1365px) {
+	.compare-page {
+		.compare-section {
+			.tabs-col {
+				.tabs-div {
+					.cards-map-view-col {
+						ul {
+							li {
+								a {
+									width: 165px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.compare-page {
+		.compare-section {
+			.tabs-col {
+				.tabs-div {
+					.cards-map-view-col {
+						ul {
+							li {
+								a {
+									width: 130px;
+								}
+							}
+						}
+					}
+				}
+			}
+			.content-col {
+				.topics-col {
+					.topics-div {
+						.heading-col {
+							h2 {
+								font-size: 23px;
+								line-height: 28px;;
+							}
+						}
+						.panel-group {
+							.panel {
+								.panel-body {
+									ul {
+										padding-left: 55px;
+									}
+								}
+							}
+						}
+					}
+				}
+				.tab-content {
+					.tab-pane {
+						.content-card-col {
+							.address-div {
+								.dropdown {
+									button {
+										font-size: 20px;
+										line-height: 25px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	footer {
+		padding: 40px 0 10px;
+		.links-col {
+			min-height: 175px;
+		}
+	}
+	.compare-page {
+		.compare-section {
+			.tabs-col {
+				.tabs-div {
+					padding: 0;
+					.preference-col {
+						padding: 21px 15px;
+						.dropdown {
+							button {
+								font-size: 16px;
+								line-height: 21px;
+							}
+						}
+					}
+					.cards-map-view-col {
+						padding: 0;
+						ul {
+							li {
+								a {
+									width: 115px;
+									font-size: 16px;
+									line-height: 21px;
+								}
+							}
+						}
+					}
+					.download-col {
+						.dropdown {
+							button {
+								padding: 10px 20px;
+								font-size: 16px;
+								line-height: 21px;
+							}
+						}
+					}
+				}
+			}
+			.content-col {
+				.topics-col {
+					.topics-div {
+						.panel-group {
+							.panel {
+								.panel-heading {
+									h4 {
+										a {
+											i {
+												margin-right: 10px;
+											}
+										}
+									}
+								}
+								.panel-body {
+									ul {
+										padding-left: 40px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	header {
+		padding: 10px 0;
+	}
+	.compare-page {
+		.compare-section {
+			.tabs-col {
+				padding: 0 15px;
+				.tabs-div {
+					.preference-col {
+						padding: 20px 15px;
+					    text-align: center;
+					    border-bottom: 1px solid #EFEFEF;
+					    margin-bottom: 15px;
+					    .dropdown {
+					    	ul {
+					    		left: 0;
+					    		right: 0;
+					    	}
+					    }
+					}
+					.cards-map-view-col {
+						ul {
+							li {
+								a {
+									width: 110px;
+								}
+							}
+						}
+					}
+					.download-col {
+						.dropdown {
+							button {
+								padding: 10px 25px;
+							}
+						}
+					}
+				}
+			}
+			.content-col {
+				padding: 0;
+				.topics-col {
+					.topics-div {
+						max-width: 340px;
+						margin: 0 auto 25px;
+					}
+				}
+				.tab-content {
+					.tab-pane {
+						.content-card-col {
+							padding: 0 15px;
+							.address-div,
+							.content-div {
+								max-width: 340px;
+								margin: 0 auto 25px;
+							}
+							.content-div {
+								margin: 0 auto;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 479px) {
+	header {
+		.logo-col {
+			a {
+				img {
+					width: 130px;
+				}
+			}
+		}
+		.profile-col {
+			padding: 2px 15px;
+			.profile-div {
+				p {
+					margin-right: 10px;
+				}
+				i {
+					margin-left: 8px;
+				}
+			}
+		}
+	}
+	.login-section {
+		.login-col {
+			.login-div {
+				padding: 25px 15px;
+				form {
+					input {
+						&.country-code-input {
+							margin-right: 10px;
+						}
+						&.code-input {
+							margin-right: 10px;
+						}
+						&.number-input {
+							width: 75%;
+						}
+					}
+				}
+			}
+		}
+	}
+	.apps-section {
+		.heading-col {
+			padding: 25px 15px;
+		}
+		.apps-link-col {
+			.apps-link-div {
+				margin: 0 auto 30px;
+				float: none;
+			}
+		}
+	}
+	footer {
+		.links-col {
+			width: 100%;
+			min-height: 100%;
+			margin-bottom: 5px;
+		}
+		.copy-col {
+			h2 {
+				margin: 0 0 17px;
+			}
+		}
+	}
+	.compare-page {
+		.hidden-xxs {
+			display: none;
+		}
+		.visible-xxs {
+			display: block;
+		}
+		.compare-section {
+			padding: 3rem 0;
+			.tabs-col {
+				.tabs-div {
+					.preference-col {
+						margin-bottom: 0;
+					}
+					.download-col {
+						.dropdown {
+							button {
+								width: 100%;
+							}
+							ul {
+								left: 0;
+								right: 0;
+							}
+						}
+					}
+					.cards-map-view-col {
+						width: 100%;
+						background-color: $color-F5FAFF;
+						ul {
+							li {
+								width: 50%;
+								a {
+									width: 100%;
+								}
+							}
+						}
+					}
+				}
+			}
+			.content-col {
+				.topics-col {
+					.topics-div {
+						.heading-div {
+							padding: 15px;
+							h2 {
+								font-size: 22px;
+								line-height: 28px;
+							}
+						}
+						.panel-group {
+							.panel {
+								.panel-heading {
+									h4 {
+										a {
+											font-size: 16px;
+											line-height: 21px;
+											i {
+												padding-top: 1px;
+												width: 20px;
+												height: 20px;
+											}
+										}
+									}
+								}
+								.panel-body {
+									padding: 0 15px;
+									ul {
+										padding-left: 35px;
+										margin-bottom: 40px;
+										li {
+											font-size: 16px;
+											line-height: 21px;
+											a {
+												font-size: 16px;
+												line-height: 21px;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
