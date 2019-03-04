@@ -1,0 +1,8 @@
+export const GET_ADDRESS = "GET_OTP";
+export const GET_LOCATION = "GET_LOCATION";
+export const CREATE_MAP = "CREATE_MAP";
+export const ADD_POLYGON_TO_MAP = "ADD_POLYGON_TO_MAP";
+
+export const HANDLE_LATITUDE = "HANDLE_LATITUDE";
+export const HANDLE_LONGITUDE = "HANDLE_LONGITUDE";
+export const HANDLE_ADDRESS = "HANDLE_ADDRESS";

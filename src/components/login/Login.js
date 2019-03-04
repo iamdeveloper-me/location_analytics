@@ -1,9 +1,8 @@
 import React from "react";
 
-
 import { connect } from "react-redux"
 
-import {getOTP} from "../../actions/LoginCreator.js"
+import { getOTP } from "../../actions/LoginCreator.js"
 
 
 class Login extends React.Component {
@@ -16,7 +15,6 @@ class Login extends React.Component {
     }
 
     handleSendCode = (e) => {
-        debugger
         e.preventDefault();
         this.props.getOTP({
           text:this.refs.addtodo.value
@@ -35,21 +33,21 @@ class Login extends React.Component {
     }
 
     handleSendCode = (e) => {
-        e.preventDefault();
-        if(this.state.countryCode!=="" && this.state.phoneNumber !==""){
-            //call api service to send otp and mov to next screen to enter otp
-            this.loginServ.sendOtp(this.state.countryCode,this.state.phoneNumber).then( result => {
-                if(result.data === "success"){
-                    this.props.history.push("/login2/" + this.state.countryCode + "/" + this.state.phoneNumber);
-                }
-                else{
-                    this.popServ.showPopup(result);
-                }
-            });
-        }
-        else{
-            alert("Country Code and Phone Number both should be required.")
-        }
+      e.preventDefault();
+      if(this.state.countryCode!=="" && this.state.phoneNumber !==""){
+          //call api service to send otp and mov to next screen to enter otp
+          this.loginServ.sendOtp(this.state.countryCode,this.state.phoneNumber).then( result => {
+              if(result.data === "success"){
+                  this.props.history.push("/login2/" + this.state.countryCode + "/" + this.state.phoneNumber);
+              }
+              else{
+                  this.popServ.showPopup(result);
+              }
+          });
+      }
+      else{
+          alert("Country Code and Phone Number both should be required.")
+      }
     }
 
     render(){
