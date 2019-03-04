@@ -11,12 +11,13 @@ class Login extends React.Component {
         super(props);
         this.state = {
             countryCode: window.countrycode,
-            phoneNumber: ""
+            phoneNumber: "",
+            userLogin: [],
+            statusText:""
         }
     }
 
     handleSendCode = (e) => {
-        debugger
         e.preventDefault();
         this.props.getOTP({
           text:this.refs.addtodo.value
@@ -25,7 +26,6 @@ class Login extends React.Component {
     }
 
     handlePhoneNumber = (e) => {
-        console.log(e.target)
         const re = /^[0-9\b]+$/;
         if(e.target.value === '' || re.test(e.target.value)){
             this.setState({
@@ -38,22 +38,31 @@ class Login extends React.Component {
         e.preventDefault();
         if(this.state.countryCode!=="" && this.state.phoneNumber !==""){
             //call api service to send otp and mov to next screen to enter otp
-            this.loginServ.sendOtp(this.state.countryCode,this.state.phoneNumber).then( result => {
-                if(result.data === "success"){
-                    this.props.history.push("/login2/" + this.state.countryCode + "/" + this.state.phoneNumber);
-                }
-                else{
-                    this.popServ.showPopup(result);
-                }
-            });
+            this.props.getOTP({
+                countryCode:this.state.countryCode,
+                phoneNumber:this.state.phoneNumber
+            })
         }
         else{
             alert("Country Code and Phone Number both should be required.")
         }
     }
 
+    componentWillReceiveProps(nextProps){
+        let countryCode = this.state.countryCode
+        let phoneNumber = this.state.phoneNumber
+        let test = nextProps.userLogin.payload
+        
+        var props = this.props;
+        setTimeout(function(){
+            if (test.statusText == "success") {
+                props.history.push("/login2/" + countryCode + "/" + phoneNumber)
+            }
+        }, 2000);
+    }
+
     render(){
-        // console.log("test1 - ", window.countrycode)
+        const aaaa = this.props.userLogin
         return(
             <section className="login-section">
                 <div className="container">
@@ -78,10 +87,13 @@ class Login extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
+    
   return {
-      state
+      userLogin: state.users
   }
 }
 
 export default connect(mapStateToProps, { getOTP })(Login);
+
+
