@@ -21,4 +21,4 @@ const loginReducers = (state = [], action) => {
     }
 };
 
-export default { loginReducers };
+export default loginReducers;

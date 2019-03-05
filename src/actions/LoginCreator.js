@@ -4,7 +4,6 @@ import { GET_OTP, VERIFY_OTP } from "../actionTypes/LoginActionType.js"
 // import axios from "axios";
 
 const getOTP = ({countryCode, phoneNumber}) => {
-    // debugger
   return {
     type: GET_OTP,
     payload:{
@@ -14,7 +13,6 @@ const getOTP = ({countryCode, phoneNumber}) => {
   }
 }
 const verifyOTP = ({countryCode, phoneNumber, otp}) => {
-    // debugger
   return {
     type: VERIFY_OTP,
     payload:{
@@ -22,13 +20,6 @@ const verifyOTP = ({countryCode, phoneNumber, otp}) => {
         phoneNumber:phoneNumber,
         otp:otp
     },
-  }
-}
-
-const verifyOTP = ({text}) => {
-  return {
-    type: VERIFY_OTP,
-    payload:text,
   }
 }
 
