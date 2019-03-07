@@ -16,9 +16,10 @@ const loginReducers = (state = [], action) => {
                 type: action.type,
                 payload: state
             }
-        default:
-            return state;
-    }
+            default:
+                return state;
+            }
 };
 
 export default loginReducers;
+

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { connect } from "react-redux"
 
-// import {verifyOtp} from "../../actions/LoginCreator.js"
+import { verifyOTP } from "../../actions/LoginCreator.js"
 
 
 class Login2 extends Component {
@@ -14,28 +14,19 @@ class Login2 extends Component {
             handleOtp0:'', 
             countryCode: this.props.match.params.code, 
             phoneNumber: this.props.match.params.number, 
-            otp: [0,0,0,0]
+            otp: [0,0,0,0],
+            varifyUser:[]
         };
     }
     handleLogin = (e) => {
         e.preventDefault();
         if(this.state.countryCode!=="" && this.state.phoneNumber !=="" ){
-            //call api service to send otp and mov to next screen to enter otp
             let otp = this.state.otp.join("");   
-            // this.props.verifyOtp({
-            //     countryCode:this.state.countryCode,
-            //     phoneNumber:this.state.phoneNumber,
-            //     otp:otp
-            // })
-
-            // this.loginServ.verifyOtp(this.state.countryCode,this.state.phoneNumber,otp).then( result => {
-            //     if(result.data === "success"){
-            //         this.props.history.push("/dashboard/");
-            //     }
-            //     else{
-            //         this.popServ.showPopup(result);
-            //     }
-            // });
+            this.props.verifyOTP({
+                countryCode:this.state.countryCode,
+                phoneNumber:this.state.phoneNumber,
+                otp:otp
+            })
         }
         else{
             alert("OTP, phone number and country code fields can't be blank.")
@@ -75,8 +66,22 @@ class Login2 extends Component {
         this.handleOtp(e.target.value,3);
     }
 
+    componentWillReceiveProps(nextProps){
+        let test = nextProps.varifyUser.payload
+        var props = this.props;
+        setTimeout(function(){
+            if (test.statusText == "success") {
+                console.log(test.responseJSON)
+                localStorage.setItem("token", test.responseJSON.otp.token);
+                localStorage.setItem("mobile_no", test.responseJSON.otp.mobile);
+                props.history.push("/dashboard")
+            }
+        }, 2000);
+    }
+
     render() {
-        console.log(this.state.otp)
+        console.log("test ",this.props)
+        // debugger
         return (
             <section className="login-section">
             <div className="container">
@@ -108,10 +113,9 @@ class Login2 extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log("################################123 ", state)
-  return {
-      varifyUser: state.varifyUser
-  }
+    return {
+      varifyUser: state.users
+    }
 }
 
-export default connect(mapStateToProps, {  })(Login2);
+export default connect(mapStateToProps, { verifyOTP })(Login2);

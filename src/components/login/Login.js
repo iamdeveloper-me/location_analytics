@@ -16,14 +16,6 @@ class Login extends React.Component {
         }
     }
 
-    handleSendCode = (e) => {
-        e.preventDefault();
-        this.props.getOTP({
-          text:this.refs.addtodo.value
-        })
-        // this.ref.addtodo.value = "";
-    }
-
     handlePhoneNumber = (e) => {
         const re = /^[0-9\b]+$/;
         if(e.target.value === '' || re.test(e.target.value)){

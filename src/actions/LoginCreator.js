@@ -1,5 +1,4 @@
-// LoginCreator.js
-
+import axios from "axios"
 import { GET_OTP, VERIFY_OTP } from "../actionTypes/LoginActionType.js"
 // import axios from "axios";
 
@@ -12,6 +11,7 @@ const getOTP = ({countryCode, phoneNumber}) => {
     },
   }
 }
+
 const verifyOTP = ({countryCode, phoneNumber, otp}) => {
   return {
     type: VERIFY_OTP,
@@ -22,5 +22,6 @@ const verifyOTP = ({countryCode, phoneNumber, otp}) => {
     },
   }
 }
+
 
 export { getOTP, verifyOTP };

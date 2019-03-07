@@ -7,11 +7,12 @@ import Footer  from '../footer/Footer';
 class Dashboard extends React.Component {
   constructor(props){
     super(props);
+    console.log("jjjjjjjjjjjjjjjjjj", props)
   }
 
   handleIconClick(e){
     e.preventDefault();
-    alert("Comming Soon! This section will get launched soon. Till then please wait.")
+    alert("Coming Soon! This section will get launched soon. Till then please wait.")
   }
 
   render() {
@@ -125,4 +126,11 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard;
+const mapStateToProps = (state) => {
+  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>: ',state)
+    return {
+      varifyUser: state.users
+    }
+}
+
+export default connect(mapStateToProps, {})(Dashboard);
