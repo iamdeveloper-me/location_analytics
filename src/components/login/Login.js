@@ -42,18 +42,15 @@ class Login extends React.Component {
     componentWillReceiveProps(nextProps){
         let countryCode = this.state.countryCode
         let phoneNumber = this.state.phoneNumber
-        let test = nextProps.userLogin.payload
-        
+        let test = nextProps.userLogin.status
         var props = this.props;
-        setTimeout(function(){
-            if (test.statusText == "success") {
-                props.history.push("/login2/" + countryCode + "/" + phoneNumber)
-            }
-        }, 2000);
+        if (test == 200) {
+            props.history.push("/login2/" + countryCode + "/" + phoneNumber)
+        }
     }
 
     render(){
-        const aaaa = this.props.userLogin
+        console.log(this.props)
         return(
             <section className="login-section">
                 <div className="container">
@@ -79,7 +76,6 @@ class Login extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    
   return {
       userLogin: state.users
   }

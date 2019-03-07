@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { connect } from "react-redux"
 
-import { verifyOTP } from "../../actions/LoginCreator.js"
+import { verifyOTP, getOTP } from "../../actions/LoginCreator.js"
 
 
 class Login2 extends Component {
@@ -34,7 +34,11 @@ class Login2 extends Component {
     }
 
     sendOtp = (e) => {
-        this.popServ.showPopup(this.loginServ.sendOtp(this.state.countryCode,this.state.phoneNumber));
+        this.props.getOTP({
+            countryCode:this.state.countryCode,
+            phoneNumber:this.state.phoneNumber
+        })
+        // this.popServ.showPopup(this.loginServ.sendOtp(this.state.countryCode,this.state.phoneNumber));
     }
 
     handleOtp = (value,index) => {
@@ -67,16 +71,15 @@ class Login2 extends Component {
     }
 
     componentWillReceiveProps(nextProps){
-        let test = nextProps.varifyUser.payload
-        var props = this.props;
-        setTimeout(function(){
-            if (test.statusText == "success") {
-                console.log(test.responseJSON)
-                localStorage.setItem("token", test.responseJSON.otp.token);
-                localStorage.setItem("mobile_no", test.responseJSON.otp.mobile);
-                props.history.push("/dashboard")
-            }
-        }, 2000);
+        // debugger
+        let test = nextProps.varifyUser.otp;
+        let props = this.props;
+        if (test.token != "") {
+            console.log(test.responseJSON)
+            localStorage.setItem("token", test.token);
+            localStorage.setItem("mobile_no", test.mobile);
+            props.history.push("/dashboard")
+        }
     }
 
     render() {
@@ -113,9 +116,10 @@ class Login2 extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>",state)
     return {
       varifyUser: state.users
     }
 }
 
-export default connect(mapStateToProps, { verifyOTP })(Login2);
+export default connect(mapStateToProps, { verifyOTP, getOTP })(Login2);

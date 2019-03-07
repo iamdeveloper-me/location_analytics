@@ -7,7 +7,6 @@ import Footer  from '../footer/Footer';
 class Dashboard extends React.Component {
   constructor(props){
     super(props);
-    console.log("jjjjjjjjjjjjjjjjjj", props)
   }
 
   handleIconClick(e){

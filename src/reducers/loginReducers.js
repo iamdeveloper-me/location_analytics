@@ -2,23 +2,22 @@ import { GET_OTP, VERIFY_OTP } from "../actionTypes/LoginActionType.js"
 import {userLoginApi, varifyOptApi} from "../utils/Api.js"
 
 
+const initialState = {
+  users: []
+}
 const loginReducers = (state = [], action) => {
+    // debugger
     switch(action.type){
         case GET_OTP:
-            state = userLoginApi(action.payload.countryCode, action.payload.phoneNumber)
-            return {
-                type: action.type,
-                payload: state
-            }
+            return Object.assign({}, state, action.payload)
+
         case VERIFY_OTP:
-            state = varifyOptApi(action.payload.countryCode, action.payload.phoneNumber, action.payload.otp)
-            return {
-                type: action.type,
-                payload: state
-            }
-            default:
-                return state;
-            }
+            // debugger
+            return Object.assign({}, state, action.payload)
+
+        default:
+            return state;
+        }
 };
 
 export default loginReducers;
