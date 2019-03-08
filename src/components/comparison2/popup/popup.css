@@ -1,0 +1,128 @@
+.modal-header{
+
+border-top-right-radius: 5px;
+border-top-left-radius: 5px;
+
+}
+.closeModal{
+  opacity: 8 !important;
+  color: red !important;
+}
+.ptext input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #2d8dff;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 3px;
+}
+.ptext{
+  font-weight: 600 !important;
+  font-size: 12px;
+}
+.ptext input[type="checkbox"]:checked {
+
+  background-color: #2d8dff;
+
+}
+#showhideheader{
+  max-height: 20px;
+   float: right;
+}
+
+/*.bt_zoom{
+  position: absolute;
+    left: 50px;
+    bottom: 70px;
+    width: 25px;
+ 
+}
+.bt_zoom button{
+  width: 100%;
+  z-index: 999;
+  display: block;
+  cursor: pointer;
+  background: #777bf0!important;
+  color: #fff;
+  border:0px;
+  border-radius: 2px;
+  margin-bottom:1px;  
+  height: 25px;
+}
+.bt_zoom button.zoommore{
+  background:url(zoomImg/plus_icon.png) no-repeat center center #777bf0!important;
+  background-position: 2px!important;
+}
+.bt_zoom button.zoomless{
+  background: url(zoomImg/less_icon.png) no-repeat center center #777bf0!important;
+  background-position: 2px!important;
+}*/
+
+
+input[type="text"]#pac-input{
+    height: 40px;
+    border: 0px solid rgb(255, 255, 255);
+    width: 70%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px !important;
+    font-size: 16px;
+    padding-left:15px;
+    float: left;
+}
+.mapbtn{
+  border: 0px;
+  border-radius:5px;
+  height: 40px;
+  min-width: 42px;
+  background: #777bf0;
+  color: #fff;
+  float: left;
+  margin-left: 5px;
+}
+
+/*.gm-style{
+  width:98%!important;
+  margin: 0px auto!important;
+  right:0px!important;
+}
+.gmnoprint{
+  bottom: 0px !important;
+  top:unset!important;
+}
+.gmnoprint.gm-style-cc{
+  top:unset!important;
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom{
+   top:unset!important;
+}
+.gm-style-mtc{
+  margin-bottom: 40px!important;
+}
+.gmnoprint .gmnoprint:first-child{
+  bottom:15px!important;
+}*/
+
+h2.select_address{
+  text-align: center;
+  font-size: 24px;
+}
+
+input#remember_me {
+  float: left;
+  margin-top: -14px;
+  margin-right: 3px;
+}
+.rem_bt{
+  font-size:15px;
+}
+
+.compare-page.v3_screen label.switch.left_check {
+    left: -10px;
+}
+
+.mosaic_segments_li {
+  width: 16%!important;
+}

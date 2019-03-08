@@ -17,12 +17,12 @@ class Login extends React.Component {
     }
 
     handlePhoneNumber = (e) => {
-        const re = /^[0-9\b]+$/;
-        if(e.target.value === '' || re.test(e.target.value)){
-            this.setState({
-                phoneNumber: e.target.value
-            });
-        }
+      const re = /^[0-9\b]+$/;
+      if(e.target.value === '' || re.test(e.target.value)){
+          this.setState({
+            phoneNumber: e.target.value
+          });
+      }
     }
 
     handleSendCode = (e) => {

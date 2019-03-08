@@ -116,7 +116,6 @@ class Login2 extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>",state)
     return {
       varifyUser: state.users
     }

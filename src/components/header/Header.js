@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 class Header extends React.Component {
   render() {
@@ -7,7 +9,7 @@ class Header extends React.Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-3 col-md-3 col-sm-4 col-xs-6 logo-col">
-                <a href="index.html"> <img src={window.staticurl + '/images/logo.svg'} alt="Logo" /> </a>
+                <Link to='/dashboard'> <img src={window.staticurl + '/images/logo.svg'} alt="Logo" /> </Link>
             </div>
             <div className="col-lg-5 col-md-5 col-sm-4 hidden-xs heading-col">
                 {/* <label>Dashboard</label> */}

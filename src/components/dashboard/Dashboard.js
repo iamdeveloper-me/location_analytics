@@ -85,18 +85,8 @@ class Dashboard extends React.Component {
                   </div>
                 </span>
               </div>
-              {/*<div className="apps-link-div">
-                <Link to='/comparision'>
-                    <div className="image-div">
-                        <img src={window.staticurl + "/images/icon-location-analytics.png"} alt="LOCATION ANALYTICS Icon" />
-                    </div>
-                    <div className="text-div">
-                        <h2>LOCATION ANALYTICS</h2>
-                    </div>
-                </Link>
-              </div>*/}
               <div className="apps-link-div">
-                <Link to='/comparision2'>
+                <Link to='/comparison2'>
                     <div className="image-div">
                       <img src={window.staticurl + "/images/icon-location-analytics.png"} alt="LOCATION ANALYTICS Icon" />
                     </div>
@@ -126,7 +116,6 @@ class Dashboard extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>: ',state)
     return {
       varifyUser: state.users
     }
