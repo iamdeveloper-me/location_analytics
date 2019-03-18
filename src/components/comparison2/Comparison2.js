@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux"
+import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 import  Header  from '../header/Header';
 import Footer  from '../footer/Footer';
 // import GeoLocationService from '../services/GeoLocationService';
@@ -8,6 +9,7 @@ import Footer  from '../footer/Footer';
 // import PopupDetail from './popup/popupdetails';
 import './popup/popup.css';
 import MapContainer from '../map/index.js';
+import Insight from './Insight/index.js';
 
 import { verifyOTP, getOTP } from "../../actions/LoginCreator.js"
 
@@ -166,6 +168,7 @@ class Comparison2 extends Component {
       MS_STRING:"", 
       isMosaicSegmentData: false, 
       isChecked:false, 
+      Insight:false, 
       checkBoxObj:{
         "Demographics":{},
         "Traffic":{},
@@ -421,135 +424,20 @@ class Comparison2 extends Component {
     callbackMapData(multi_place){
         this.setState({multi_place:multi_place})
     }
+
+  insightView = () => {
+    this.setState({
+      Insight:!this.state.Insight
+    })
+  }
   render(){
     let col_class = (this.state.cardViewData.length > 0) ? (12 / this.state.cardViewData.length) : 12;
     return(
       <div className="compare-page v3_screen page-wrapper chiller-theme">
-  <a id="show-sidebar" className="btn btn-sm btn-dark" href="javascript:void(0);">
-   <span><img src="images/np_decline-graph.svg"/></span>
-  </a> 
-  <nav id="sidebar" className="sidebar-wrapper">
-    <div className="sidebar-content">
-      <div className="sidebar-brand">
-        <a href="#"><img src="images/np_decline-graph.svg"/> INSIGHTS</a>
-        <div id="close-sidebar">
-          <i className="fa fa-angle-left"></i>
-        </div>
-      </div>
-      <div className="sidebar-search">
-        <div>
-            <p>Select insights to begin configuring insights for your report.</p>
-          <div className="form-group">
-            <input type="text" className="form-control search-menu" placeholder="Search insights…" />
-          </div>
-        </div>
-      </div>
-      <div className="sidebar-menu">
-        <ul>
-          <li className="sidebar-dropdown active">
-            <a href="#">
-              <span>DEMOGRAPHICS</span>
-            </a>
-            <div className="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="sidebar-dropdown">
-            <a href="#">
-              <span>TRAFFIC</span>
-            </a>
-            <div className="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="sidebar-dropdown">
-            <a href="#">
-              <span>Components</span>
-            </a>
-            <div className="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="sidebar-dropdown">
-            <a href="#">
-              <span>POINT OF INTEREST</span>
-            </a>
-            <div className="sidebar-submenu">
-              <ul>
-               <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="sidebar-dropdown">
-            <a href="#">
-              <span>MOSAIC SEGMENTS</span>
-            </a>
-            <div className="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-                <li>
-                  <a href="#">SUB-INSIGHT</a>
-                </li>
-            </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
+        <a id="show-sidebar" className="btn btn-sm btn-dark" href="javascript:void(0);" onClick={this.insightView}>
+          <span><img src="images/np_decline-graph.svg"/></span>
+        </a> 
+        { this.state.Insight ? <Insight /> : "" }
             <section className="compare-section">
                 <div className="container-fluid maxContainer">
                     <div className="row">

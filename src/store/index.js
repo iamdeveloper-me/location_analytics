@@ -5,12 +5,9 @@ import thunk from "redux-thunk"
 import loginReducers from "../reducers/loginReducers.js"
 // import userReducers from "../reducers/userReducers.js"
 
-
-
 const store = combineReducers({
     users: loginReducers
 });
-
 
 const createStoreWithMiddleware = applyMiddleware(logger, thunk)(createStore);
 

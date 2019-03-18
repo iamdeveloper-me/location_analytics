@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 import { connect } from "react-redux"
 
 import { verifyOTP, getOTP } from "../../actions/LoginCreator.js"
-
 
 class Login2 extends Component {
     constructor(props) {
@@ -13,11 +12,13 @@ class Login2 extends Component {
         this.state = {
             handleOtp0:'', 
             countryCode: this.props.match.params.code, 
-            phoneNumber: this.props.match.params.number, 
+            phoneNumber: localStorage.getItem("send_otp_num"),
             otp: [0,0,0,0],
-            varifyUser:[]
+            varifyUser:[],
+            rememberMe:false
         };
     }
+
     handleLogin = (e) => {
         e.preventDefault();
         if(this.state.countryCode!=="" && this.state.phoneNumber !=="" ){
@@ -29,11 +30,20 @@ class Login2 extends Component {
             })
         }
         else{
-            alert("OTP, phone number and country code fields can't be blank.")
+            this.createNotification('warning', "OTP, phone number and country code fields can't be blank.")
+        }
+    }
+
+    componentDidMount(){
+        // let rem = localStorage.getItem("isAuthenticated");
+        let rem = localStorage.getItem("mobile");
+        if (rem) {
+            this.props.history.push("/dashboard/");
         }
     }
 
     sendOtp = (e) => {
+        this.createNotification('success', 'OTP Resent Successfully.', 5000)
         this.props.getOTP({
             countryCode:this.state.countryCode,
             phoneNumber:this.state.phoneNumber
@@ -48,7 +58,6 @@ class Login2 extends Component {
     }
     
     handleOtp0 = (e) => {
-       
         this.setState({handleOtp0: e.target.value});
         this.handleOtp(e.target.value,0);
         window.jQuery('input').keyup(function(){
@@ -60,27 +69,54 @@ class Login2 extends Component {
     
     handleOtp1 = (e) => {
         this.handleOtp(e.target.value,1);
-        
     }
     handleOtp2 = (e) => {
         this.handleOtp(e.target.value,2);
-        
     }
     handleOtp3 = (e) => {
         this.handleOtp(e.target.value,3);
     }
 
+    rememberMe(e){
+        if(e.target.checked){
+            this.setState({
+                rememberMe:!this.state.rememberMe
+            })
+        }else{
+            this.setState({
+                rememberMe:!this.state.rememberMe
+            })
+        }
+    }
+
     componentWillReceiveProps(nextProps){
-        // debugger
+      debugger
         let test = nextProps.varifyUser.otp;
         let props = this.props;
         if (test.token != "") {
-            console.log(test.responseJSON)
+            if (this.state.rememberMe) {
+                localStorage.setItem("mobile", this.state.phoneNumber);
+            }
+            localStorage.setItem("isAuthenticated", true);
+            // props.history.push("/dashboard/");
+            // console.log(test.responseJSON)
             localStorage.setItem("token", test.token);
             localStorage.setItem("mobile_no", test.mobile);
             props.history.push("/dashboard")
+        }else{
+            this.createNotification('warning', "Please Enter Correct OTP!")
         }
     }
+
+    createNotification(type, mes) {
+        if (type == "success") {
+            NotificationManager.success(mes);
+        }else if (type == "warning") {
+            NotificationManager.warning(mes);
+        }else if (type == "error") {
+            NotificationManager.error(mes);
+        }
+    };
 
     render() {
         console.log("test ",this.props)
@@ -90,7 +126,7 @@ class Login2 extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 logo-col login-logo">
-                    <img src={process.env.PUBLIC_URL + '/images/logo-login.svg'} alt="Logo" />
+                    <img src={process.env.PUBLIC_URL + '/images/logo.svg'} alt="Logo" />
                     </div>
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 login-col">
                         <div className="login-div">
@@ -103,13 +139,15 @@ class Login2 extends Component {
                                 <input type="text" placeholder="0"  onChange={this.handleOtp1} className="code-input" maxLength="1" ref={c => this.nextComponent=c}/>
                                 <input type="text" placeholder="0"  onChange={this.handleOtp2} className="code-input" maxLength="1" ref={c => this.nextComponent=c}/>
                                 <input type="text" placeholder="0"  onChange={this.handleOtp3} className="code-input no-right-margin" maxLength="1" />
-                                <p>Didn’t receive code? <a href="javascript:void(0)" onClick={this.sendOtp}>RESEND CODE</a></p>
+                                <p>Didn’t receive OTP? <a href="javascript:void(0)" onClick={this.sendOtp}>RESEND OTP</a></p>
                                 <button className="btn send-code-btn">Login</button>
+                                <input type="checkbox" value="true" id="remember_me" onChange={this.rememberMe.bind(this)} />  <span className="rem_bt"> Remember Me </span>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+            <NotificationContainer/>
         </section>
         );
     } 

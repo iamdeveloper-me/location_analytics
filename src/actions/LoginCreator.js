@@ -1,8 +1,9 @@
 import axios from "axios"
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+
 import { GET_OTP, VERIFY_OTP } from "../actionTypes/LoginActionType.js"
-// import axios from "axios";
 
-
+import userLoginApi from "../utils/Api.js"
 
 const headers = {
   "x-auth-token":"TOKEN123",
@@ -34,9 +35,18 @@ const verifyOTP = ({countryCode, phoneNumber, otp}) => {
     "device_token":"tokendevice123",
     "code": otp
     }
-  }
+  };
+  let url = "https://stap7kgv0c.execute-api.us-west-2.amazonaws.com/default/v1/customers/otp/verify";
+  let method = "POST";
+  let dd = JSON.stringify(data);
+  let data1 = userLoginApi(headers, dd, url, method)
+  debugger
   return (dispatch) => {
-    axios.post("https://stap7kgv0c.execute-api.us-west-2.amazonaws.com/default/v1/customers/otp/verify", data, {headers: headers}
+    dispatch({
+        type:VERIFY_OTP,
+        payload:data1
+      })
+    /*axios.post("https://stap7kgv0c.execute-api.us-west-2.amazonaws.com/default/v1/customers/otp/verify", data, {headers: headers}
     ).then((response) => {
       // debugger
       dispatch({
@@ -44,8 +54,8 @@ const verifyOTP = ({countryCode, phoneNumber, otp}) => {
         payload:response.data
       })
     }).catch((err) => {
-      console.log("222@@@@@@@@@@@@@@@@@@@", err)
-    })
+      alert("Please enter valid otp !")
+    })*/
   }
 }
 
